@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block start %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center mb-4">Employee Management System</h1>
+            <div class="text-center">
+                <a href="/" class="btn btn-primary me-4">Home</a>
+                <a href="/view_emp/" class="btn btn-primary  me-4">View All Employees</a>
+                <a href="/employee/" class="btn btn-primary ">Add an Employee</a>
+            </div>
+            <div class="mt-5">
+                <h3>Features:</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Simple Django application for managing employee data.</li>
+                    <li class="list-group-item">Add, edit, and delete employee information.</li>
+                    <li class="list-group-item">Filter employees by name.</li>
+                    <li class="list-group-item">Login, Logout & Register for managing employees.</li>
+                </ul>
+            </div><br><br>
+            <p class="mt-5 text-center"><h2 class="mt-5 text-center">Made Using Django, HTML, CSS & Python</h2></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

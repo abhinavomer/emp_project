@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block start %}
+<div class="container mt-5"> 
+    <a href="/" class="btn btn-primary">Home</a>
+    <h2 class="text-center mt-4">All Employees</h2>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="mb-4">
+                <div class="input-group">
+                    <input name="search" type="text" class="form-control" placeholder="Search Employee by Name">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="table mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Department</th>
+                <th scope="col">Employee Role</th>
+                <th scope="col">All Details</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employee %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ employee.first_name }} {{ employee.last_name }}</td>
+                <td>{{ employee.dept }}</td>
+                <td>{{ employee.role }}</td>
+                <td>
+                    <a href="/see-emp/{{ employee.id }}" class="btn btn-warning">View</a>
+                </td>
+                <td>
+                    <a href="/delete-emp/{{ employee.id }}" class="btn btn-danger">Delete</a>
+                    <a href="/update-emp/{{ employee.id }}" class="btn btn-success">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

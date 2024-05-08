@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block start%}
+
+<div class="container mt-5"> 
+    <a href="/" class="btn btn-primary">Home</a>
+      <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <h2>Update Employee</h2>
+          <hr>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Employee First Name</label>
+            <input name="first_name"  value="{{employee.first_name}}" required type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Employee Last Name</label>
+            <input name="last_name"  value="{{employee.last_name}}" required type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="Select" class="form-label">Department</label>
+            <select name='dept' value="{{employee.dept}}" id="Select" class="form-select">
+              <option>Data Science</option>
+              <option>ML Ops</option>
+              <option>DevOps</option>
+              <option>SDE Team</option>
+              <option>Web Development</option>
+              <option>App Development</option>
+              <option>Python Development</option>
+              <option>HR</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="Select" class="form-label">Role</label>
+            <select name='role' value="{{employee.role}}" id="Select" class="form-select">
+              <option>Back End Dev</option>
+              <option>Front End Dev</option>
+              <option>DBMS Admin</option>
+              <option>Tester</option>
+              <option>Senior Developer</option>
+              <option>Junior Developer</option>
+              <option>Head</option>
+              <option>Manager</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputAddress" class="form-label">Address</label>
+            <input name="add" required type="text" value="{{employee.add}}" class="form-control" id="exampleInputAddress">
+          </div>
+          <div class="form-group">
+            <label for="validationCustom01" class="form-label">Salary</label>
+            <input type="number" name='salary'  value="{{employee.salary}}" class="form-control" id="validationCustom01"  required>
+          </div>
+          <div class="form-group">
+            <label for="validationCustom01" class="form-label">Bonus</label>
+            <input type="number" name='bonus' value="{{employee.bonus}}" class="form-control" id="validationCustom01"  required>
+          </div>
+          <div class="form-group">
+            <label for="validationCustom01" class="form-label">Phone</label>
+            <input type="number" name='phone' value="{{employee.phone}}" class="form-control" id="validationCustom01"  required>
+          </div>
+          <div class="form-group">
+              <label for="exampleInput">Employee Image</label>
+              <input name="img" type="file" class="form-control">
+            </div>
+            <hr>
+          <button type="submit" class="btn btn-success">Update Employee</button>
+        </form>
+  </div>
+
+{% endblock %}

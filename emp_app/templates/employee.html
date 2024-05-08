@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block start%}
+<div class="container mt-5"> 
+    <a href="/" class="btn btn-primary">Home</a>
+    <form class="col-md-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 class="text-center">Add Employee</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="exampleInputFirstName" class="form-label">Employee First Name</label>
+            <input name="first_name" required type="text" class="form-control" id="exampleInputFirstName">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputLastName" class="form-label">Employee Last Name</label>
+            <input name="last_name" required type="text" class="form-control" id="exampleInputLastName">
+        </div>
+        <div class="mb-3">
+            <label for="deptSelect" class="form-label">Department</label>
+            <select name='dept' id="deptSelect" class="form-select">
+                <option>Data Science</option>
+                <option>ML Ops</option>
+                <option>DevOps</option>
+                <option>SDE Team</option>
+                <option>Web Development</option>
+                <option>App Development</option>
+                <option>Python Development</option>
+                <option>HR</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="roleSelect" class="form-label">Role</label>
+            <select name='role' id="roleSelect" class="form-select">
+                <option>Back End Dev</option>
+                <option>Front End Dev</option>
+                <option>DBMS Admin</option>
+                <option>Tester</option>
+                <option>Senior Developer</option>
+                <option>Junior Developer</option>
+                <option>Head</option>
+                <option>Manager</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputAddress" class="form-label">Address</label>
+            <input name="add" required type="text" class="form-control" id="exampleInputAddress">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputSalary" class="form-label">Salary</label>
+            <input type="number" name='salary' class="form-control" id="exampleInputSalary" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputBonus" class="form-label">Bonus</label>
+            <input type="number" name='bonus' class="form-control" id="exampleInputBonus" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPhone" class="form-label">Phone</label>
+            <input type="number" name='phone' class="form-control" id="exampleInputPhone" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputHiringDate" class="form-label">Hiring Date</label>
+            <input type="date" name='hire_date' class="form-control" id="exampleInputHiringDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputImage" class="form-label">Employee Image</label>
+            <input name="img" type="file" class="form-control" id="exampleInputImage">
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-success">Add Employee</button>
+    </form>
+</div>
+{% endblock %}
